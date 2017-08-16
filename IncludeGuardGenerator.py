@@ -1,4 +1,5 @@
 import sys
+import os
 
 if sys.version_info.major!=3:
     raise Exception("This is python 3 code. Please use a python 3 interpreter.")
@@ -42,6 +43,8 @@ def getName():
 
 def main():
     name = getName()
+    if os.path.isfile(name)==False:
+        raise Exception("That file already exists. This script cannot overwrite files.")
     nlda = cop(makeLda(name))
     ou = []
     merge(ou,makeLda("#ifndef "))
