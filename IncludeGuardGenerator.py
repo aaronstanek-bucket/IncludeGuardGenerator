@@ -43,7 +43,7 @@ def getName():
 
 def main():
     name = getName()
-    if os.path.isfile(name)==False:
+    if os.path.isfile(name)==True:
         raise Exception("That file already exists. This script cannot overwrite files.")
     nlda = cop(makeLda(name))
     ou = []
